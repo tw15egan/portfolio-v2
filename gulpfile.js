@@ -5,6 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const htmlmin = require('gulp-htmlmin');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const surge = require('gulp-surge');
 
 const reload = browserSync.reload;
 
@@ -54,3 +55,10 @@ gulp.task('serve', ['sass', 'html'], () => {
 });
 
 gulp.task('build', ['sass', 'html', 'js']);
+
+gulp.task('deploy', ['build'], () => {
+  surge({
+    project: './dist',
+    domain: 'tjegan.surge.sh',
+  });
+});

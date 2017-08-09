@@ -1,5 +1,148 @@
 @import './utils/normalize.scss';
 
+$size-xs: .25rem;
+$size-s: .5rem;
+$size-m: 1rem;
+$size-l: 1.5rem;
+$size-xl: 2rem;
+
+$brand-01: #00B2CA;
+$brand-02: #34BC6E;
+$brand-03: #FFF07C;
+$ui-01: #111;
+$text-01: #111;
+$text-02: #fefefe;
+
+$transition-time: 250ms;
+
 body {
   font-family: system-ui,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: 400;
+  padding: 1rem 5%;
+  margin: 0 auto;
+  max-width: 1000px;
+  color: $ui-01;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    padding: 2rem 1rem;
+    align-items: flex-start;
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}
+
+.link {
+  transition: all $transition-time;
+  font-weight: 700;
+  color: $text-01;
+
+  &:visited {
+    color: $text-01;
+  }
+
+  &:hover {
+    background-color: $brand-03;
+  }
+}
+
+.button {
+  background-color: $brand-03;
+  border: 2px solid $text-01;
+  padding: 0 $size-m;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: $text-01;
+  transition: all $transition-time;
+
+  svg {
+    margin-right: 1rem;
+    position: relative;
+    width: $size-l;
+    vertical-align: middle;
+    transition: all $transition-time;
+  }
+
+  &:hover {
+    background-color: #FFF7BC;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    height: 100%;
+  }
+}
+
+.title {
+  .name {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 600px) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .bio {
+    font-size: 1.25rem;
+  }
+
+  .location {
+    font-style: italic;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+footer {
+  @media (max-width: 600px) {
+    margin-top: auto;
+  }
+}
+.social {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+  padding: 0;
+
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: $size-m;
+    transition: all $transition-time;
+    padding: $size-xs;
+    border-radius: 100%;
+
+    &:hover {
+      transform: scale(1.15);
+      background-color: $brand-03;
+    }
+
+    a {
+      height: $size-l;
+      width: $size-l;
+      display: flex;
+      align-items: center;
+      border-radius: 100%;
+    }
+  }
+
+  svg {
+    fill: $ui-01;
+    width: 100%;
+  }
 }

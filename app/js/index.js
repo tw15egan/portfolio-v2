@@ -1,9 +1,9 @@
-const cats = ['Olive', 'Nova'];
-console.log('THE CLOWNS ARE COMING FOR YOU');
+const emailButton = new Clipboard('#email');
 
-setTimeout(() => {
-  console.log(
-    "%c 🤡🔪 WE'RE 🤡🔪 HERE 🤡🔪",
-    'color: #D7263D; font-size: 32px',
-  );
-}, 3000);
+emailButton.on('success', (evt) => {
+  console.log('success');
+});
+
+emailButton.on('error', (e) => {
+  console.error('whoops');
+});

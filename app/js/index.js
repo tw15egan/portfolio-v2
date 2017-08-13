@@ -1,7 +1,11 @@
 const emailButton = new Clipboard('#email');
+const tooltip = document.querySelector('.tooltip');
 
 emailButton.on('success', (evt) => {
-  console.log('success');
+  tooltip.classList.remove('hidden');
+  setTimeout(() => {
+    tooltip.classList.add('hidden');
+  }, 1500);
 });
 
 emailButton.on('error', (e) => {

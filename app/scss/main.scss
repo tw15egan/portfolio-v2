@@ -105,6 +105,36 @@ body {
     margin-top: .5rem;
     margin-bottom: 2rem;
   }
+
+  .button {
+    position: relative;
+  }
+
+  .tooltip {
+    margin-top: $size-xs;
+    transition: all $transition-time;
+    position: absolute;
+    border: 2px solid $ui-01;
+    padding: $size-s;
+    font-size: 14px;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 10px) scale(1);
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+
+    span {
+      white-space: nowrap;
+    }
+
+    &.hidden {
+      transform: translate(-50%, 0) scale(.8);
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+    }
+  }
 }
 
 footer {
@@ -146,3 +176,4 @@ footer {
     width: 100%;
   }
 }
+

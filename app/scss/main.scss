@@ -70,7 +70,7 @@ body {
   }
 
   &:hover {
-    background-color: #FFF7BC;
+    cursor: pointer;
   }
 }
 
@@ -102,24 +102,32 @@ body {
 
   .location {
     font-style: italic;
-    margin-top: .5rem;
+    margin-top: $size-s;
     margin-bottom: 2rem;
   }
 
   .button {
     position: relative;
+
+    &:focus {
+      outline: none;
+      box-shadow: 2px 2px 2px 0 rgba(#333, .4);
+    }
   }
 
   .tooltip {
     margin-top: $size-xs;
     transition: all $transition-time;
     position: absolute;
-    border: 2px solid $ui-01;
+    background-color: $text-01;
+    border: 2px solid $text-01;
+    color: $text-02;
     padding: $size-s;
-    font-size: 14px;
+    font-size: 10px;
+    font-weight: 700;
     top: 100%;
-    left: 50%;
-    transform: translate(-50%, 10px) scale(1);
+    left: -2px;
+    transform: translate(0, 10px) scaleY(1);
     height: auto;
     visibility: visible;
     opacity: 1;
@@ -129,7 +137,7 @@ body {
     }
 
     &.hidden {
-      transform: translate(-50%, 0) scale(.8);
+      transform: translate(0, 0) scaleY(.8);
       opacity: 0;
       visibility: hidden;
       overflow: hidden;

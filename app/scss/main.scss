@@ -79,6 +79,7 @@ body {
 
   &:hover {
     cursor: pointer;
+    background-color: lighten($brand-03, 20%);
   }
 }
 

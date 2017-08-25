@@ -39,13 +39,21 @@ body {
   transition: all $transition-time;
   font-weight: 700;
   color: $text-01;
+  background-position: -100%;
+  background-image: linear-gradient(to left,
+  transparent,
+  transparent 50%,
+  $brand-03 50%,
+  $brand-03);
+  background-position: 100% 0;
+  background-size: 200% 100%;
 
   &:visited {
     color: $text-01;
   }
 
   &:hover {
-    background-color: $brand-03;
+    background-position: 0 0;
   }
 }
 
@@ -166,7 +174,6 @@ footer {
     border-radius: 100%;
 
     &:hover {
-      transform: scale(1.15);
       background-color: $brand-03;
     }
 

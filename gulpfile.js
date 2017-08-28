@@ -6,6 +6,7 @@ const htmlmin = require('gulp-htmlmin');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const surge = require('gulp-surge');
+const github = require('gulp-gh-pages');
 
 const reload = browserSync.reload;
 
@@ -55,6 +56,8 @@ gulp.task('serve', ['sass', 'html'], () => {
 });
 
 gulp.task('build', ['sass', 'html', 'js']);
+
+gulp.task('github', ['build'], () => gulp.src('dist/**/*').pipe(github()));
 
 gulp.task('deploy', ['build'], () => {
   surge({

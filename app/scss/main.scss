@@ -47,6 +47,7 @@ body {
   $brand-03);
   background-position: 100% 0;
   background-size: 200% 100%;
+  background-repeat: no-repeat;
 
   &:visited {
     color: $text-01;

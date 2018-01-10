@@ -1,14 +1,14 @@
 @import './utils/normalize.scss';
 
-$size-xs: .25rem;
-$size-s: .5rem;
+$size-xs: 0.25rem;
+$size-s: 0.5rem;
 $size-m: 1rem;
 $size-l: 1.5rem;
 $size-xl: 2rem;
 
-$brand-01: #00B2CA;
-$brand-02: #34BC6E;
-$brand-03: #FFF07C;
+$brand-01: #00b2ca;
+$brand-02: #34bc6e;
+$brand-03: #fff07c;
 $ui-01: #111;
 $text-01: #111;
 $text-02: #fefefe;
@@ -16,7 +16,8 @@ $text-02: #fefefe;
 $transition-time: 250ms;
 
 body {
-  font-family: system-ui,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
   font-weight: 400;
   padding: 1rem 5%;
   margin: 0 auto;
@@ -40,11 +41,13 @@ body {
   font-weight: 700;
   color: $text-01;
   background-position: -100%;
-  background-image: linear-gradient(to left,
-  transparent,
-  transparent 50%,
-  $brand-03 50%,
-  $brand-03);
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    $brand-03 50%,
+    $brand-03
+  );
   background-position: 100% 0;
   background-size: 200% 100%;
   background-repeat: no-repeat;
@@ -121,7 +124,7 @@ body {
 
     &:focus {
       outline: none;
-      box-shadow: 2px 2px 2px 0 rgba(#333, .4);
+      box-shadow: 2px 2px 2px 0 rgba(#333, 0.4);
     }
   }
 
@@ -147,7 +150,7 @@ body {
     }
 
     &.hidden {
-      transform: translate(0, 0) scaleY(.8);
+      transform: translate(0, 0) scaleY(0.8);
       opacity: 0;
       visibility: hidden;
       overflow: hidden;
@@ -165,6 +168,7 @@ footer {
   justify-content: flex-end;
   margin-top: 4rem;
   padding: 0;
+  position: relative;
 
   li {
     list-style: none;
@@ -174,10 +178,6 @@ footer {
     transition: all $transition-time;
     padding: $size-xs;
     border-radius: 100%;
-
-    &:hover {
-      background-color: $brand-03;
-    }
 
     a {
       height: $size-l;
@@ -194,3 +194,19 @@ footer {
   }
 }
 
+.box {
+  transition: all 0.2s;
+  background-color: $brand-03;
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

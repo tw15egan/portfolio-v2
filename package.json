@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "parcel app/index.html",
     "build": "parcel build app/index.html ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "yarn build app/index.html",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/tw15egan/portfolio-v2#readme",
   "dependencies": {
     "clipboard": "^2.0.4",
+    "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.12.3"
   },
   "devDependencies": {

@@ -1,14 +1,20 @@
-@import './utils/normalize.scss';
+@import "./utils/normalize.scss";
 
-$size-xs: 0.25rem;
-$size-s: 0.5rem;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 $size-m: 1rem;
 $size-l: 1.5rem;
 $size-xl: 2rem;
 
-$brand-01: #00b2ca;
-$brand-02: #34bc6e;
-$brand-03: #fff07c;
+$brand-01: #ffd166;
 $ui-01: #111;
 $text-01: #111;
 $text-02: #fefefe;
@@ -16,10 +22,10 @@ $text-02: #fefefe;
 $transition-time: 250ms;
 
 body {
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    'Helvetica Neue', sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
   font-weight: 400;
-  padding: 1rem 5%;
+  padding: $size-m 5%;
   margin: 0 auto;
   max-width: 1000px;
   color: $ui-01;
@@ -27,7 +33,7 @@ body {
   align-items: center;
 
   @media (max-width: 600px) {
-    padding: 2rem 1rem;
+    padding: $size-xl $size-m;
     align-items: flex-start;
 
     p {
@@ -45,8 +51,8 @@ body {
     to left,
     transparent,
     transparent 50%,
-    $brand-03 50%,
-    $brand-03
+    $brand-01 50%,
+    $brand-01
   );
   background-position: 100% 0;
   background-size: 200% 100%;
@@ -62,19 +68,19 @@ body {
 }
 
 .button {
-  background-color: $brand-03;
+  background-color: $brand-01;
   border: 2px solid $text-01;
   padding: 0 $size-m;
   height: 2.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: $size-m;
   color: $text-01;
   transition: all $transition-time;
 
   svg {
-    margin-right: 1rem;
+    margin-right: $size-m;
     position: relative;
     width: $size-l;
     vertical-align: middle;
@@ -83,7 +89,7 @@ body {
 
   &:hover {
     cursor: pointer;
-    background-color: lighten($brand-03, 20%);
+    background-color: lighten($brand-01, 10%);
   }
 }
 
@@ -102,11 +108,7 @@ body {
     display: inline-block;
     font-weight: 700;
     font-size: 4rem;
-    margin-bottom: 4rem;
-
-    @media (max-width: 600px) {
-      margin-bottom: 2rem;
-    }
+    margin-bottom: $size-xl;
   }
 
   .bio {
@@ -115,8 +117,7 @@ body {
 
   .location {
     font-style: italic;
-    margin-top: $size-s;
-    margin-bottom: 2rem;
+    margin: $size-xl 0;
   }
 
   .button {
@@ -129,19 +130,19 @@ body {
   }
 
   .tooltip {
-    margin-top: $size-xs;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     transition: all $transition-time;
     position: absolute;
     background-color: $text-01;
-    border: 2px solid $text-01;
     color: $text-02;
-    padding: $size-s;
-    font-size: 10px;
-    font-weight: 700;
-    top: 100%;
-    left: -2px;
-    transform: translate(0, 10px) scaleY(1);
-    height: auto;
+    padding: 0 $size-m;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: calc(100% + 4px);
+    transform: translateX(100%);
     visibility: visible;
     opacity: 1;
 
@@ -150,7 +151,6 @@ body {
     }
 
     &.hidden {
-      transform: translate(0, 0) scaleY(0.8);
       opacity: 0;
       visibility: hidden;
       overflow: hidden;
@@ -163,10 +163,10 @@ footer {
     margin-top: auto;
   }
 }
+
 .social {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 4rem;
+  margin-top: $size-xl;
   padding: 0;
   position: relative;
 
@@ -176,7 +176,7 @@ footer {
     align-items: center;
     margin-right: $size-m;
     transition: all $transition-time;
-    padding: $size-xs;
+    padding: 0.25rem;
     border-radius: 100%;
 
     a {
@@ -195,14 +195,16 @@ footer {
 }
 
 .box {
-  transition: all 0.2s;
-  background-color: $brand-03;
+  transition: all 150ms;
+  background-color: $brand-01;
   top: 0;
   left: 0;
   display: block;
   position: absolute;
   z-index: -1;
-  border-radius: 20px;
+  height: $size-l;
+  width: $size-l;
+  border-radius: 100%;
   pointer-events: none;
 }
 

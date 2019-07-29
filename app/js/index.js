@@ -1,24 +1,26 @@
-const emailButton = new Clipboard('#email');
-const tooltip = document.querySelector('.tooltip');
+import Clipboard from "clipboard";
 
-emailButton.on('success', evt => {
-  tooltip.classList.remove('hidden');
+const emailButton = new Clipboard("#email");
+const tooltip = document.querySelector(".tooltip");
+
+emailButton.on("success", evt => {
+  tooltip.classList.remove("hidden");
   setTimeout(() => {
-    tooltip.classList.add('hidden');
+    tooltip.classList.add("hidden");
   }, 1500);
 });
 
-emailButton.on('error', e => {
-  console.error('whoops');
+emailButton.on("error", e => {
+  console.error("whoops");
 });
 
-const triggers = document.querySelectorAll('.social svg');
-const social = document.querySelector('.social');
-const highlight = document.createElement('span');
+const triggers = document.querySelectorAll(".social svg");
+const social = document.querySelector(".social");
+const highlight = document.createElement("span");
 const initialPos = triggers[0].getBoundingClientRect();
 
-highlight.classList.add('box');
-highlight.classList.add('hidden');
+highlight.classList.add("box");
+highlight.classList.add("hidden");
 highlight.style.transform = `translate(${initialPos.left}px, ${
   initialPos.top
 }px) scale(1.4)`;
@@ -29,22 +31,19 @@ function highlightIcon() {
   const rect = this.getBoundingClientRect();
   const offsetTop = rect.top;
 
-  highlight.style.width = `${rect.width}px`;
-  highlight.style.height = `${rect.height}px`;
-
   highlight.style.transform = `translate(${
     rect.left
   }px, ${offsetTop}px) scale(1.4)`;
 
-  if (highlight.classList.contains('hidden')) {
-    highlight.classList.remove('hidden');
+  if (highlight.classList.contains("hidden")) {
+    highlight.classList.remove("hidden");
   }
 }
 
 triggers.forEach(icon => {
-  icon.addEventListener('mouseenter', highlightIcon);
+  icon.addEventListener("mouseenter", highlightIcon);
 });
 
-social.addEventListener('mouseleave', () => {
-  highlight.classList.add('hidden');
+social.addEventListener("mouseleave", () => {
+  highlight.classList.add("hidden");
 });

@@ -1,4 +1,4 @@
-@import "./utils/normalize.scss";
+@import './utils/normalize.scss';
 
 * {
   box-sizing: border-box;
@@ -14,16 +14,17 @@ $size-m: 1rem;
 $size-l: 1.5rem;
 $size-xl: 2rem;
 
-$brand-01: #ffd166;
-$ui-01: #111;
-$text-01: #111;
-$text-02: #fefefe;
+$brand-01: #0f62fe;
+$brand-02: #4589ff;
+$ui-01: #161616;
+$text-01: #161616;
+$text-02: #ffffff;
 
 $transition-time: 250ms;
 
 body {
-  font-family: system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    "Helvetica Neue", sans-serif;
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
   font-weight: 400;
   padding: $size-m 5%;
   margin: 0 auto;
@@ -69,27 +70,28 @@ body {
 
 .button {
   background-color: $brand-01;
-  border: 2px solid $text-01;
-  padding: 0 $size-m;
-  height: 2.5rem;
+  border: 0;
+  padding: 16px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: $size-m;
-  color: $text-01;
+  font-size: 14px;
+  color: $text-02;
   transition: all $transition-time;
 
   svg {
-    margin-right: $size-m;
-    position: relative;
-    width: $size-l;
+    margin-left: 32px;
+    width: $size-m;
+    height: $size-m;
     vertical-align: middle;
     transition: all $transition-time;
+    fill: $text-02;
   }
 
   &:hover {
     cursor: pointer;
-    background-color: lighten($brand-01, 10%);
+    background-color: #0353e9;
   }
 }
 
@@ -105,6 +107,7 @@ body {
 
 .title {
   .name {
+    padding-left: 16px;
     display: inline-block;
     font-weight: 700;
     font-size: 4rem;
@@ -112,20 +115,22 @@ body {
   }
 
   .bio {
+    padding-left: 16px;
     font-size: 1.25rem;
   }
 
   .location {
+    padding-left: 16px;
     font-style: italic;
-    margin: $size-xl 0;
+    margin: $size-m 0 $size-xl;
   }
 
   .button {
     position: relative;
 
     &:focus {
-      outline: none;
-      box-shadow: 2px 2px 2px 0 rgba(#333, 0.4);
+      outline: 2px solid $text-02;
+      outline-offset: -4px;
     }
   }
 
@@ -137,11 +142,10 @@ body {
     position: absolute;
     background-color: $text-01;
     color: $text-02;
-    padding: 0 $size-m;
-    height: 2.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    width: calc(100% + 4px);
+    padding: 16px;
+    height: 40px;
+    font-size: 14px;
+    width: 100%;
     transform: translateX(100%);
     visibility: visible;
     opacity: 1;
@@ -167,7 +171,7 @@ footer {
 .social {
   display: flex;
   margin-top: $size-xl;
-  padding: 0;
+  padding: 0 0 0 16px;
   position: relative;
 
   li {
@@ -189,14 +193,15 @@ footer {
   }
 
   svg {
-    fill: $ui-01;
+    fill: $text-01;
     width: 100%;
+    height: 100%;
   }
 }
 
 .box {
   transition: all 150ms;
-  background-color: $brand-01;
+  background-color: $brand-02;
   top: 0;
   left: 0;
   display: block;
